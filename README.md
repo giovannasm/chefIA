@@ -280,7 +280,7 @@ Se você está estudando por conta própria e travou em algum passo, o melhor lu
 - 📖 [Odin Project](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails)
 - 📖 [Workshops gratuitos do Le Wagon](https://www.lewagon.com/pt-BR/events?category=workshop)
 - 💬 [Stack Overflow](https://stackoverflow.com) — pesquise sua dúvida em inglês para melhores resultados
-- 🤖 Sua IA preferida! (Lembre-se de usar para apredender também, não apenas para auto completar o código)
+- 🤖 Sua IA preferida! (Lembre-se de usar para aprender também, não apenas para auto completar o código)
 
 ---
 
