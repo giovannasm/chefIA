@@ -80,11 +80,11 @@ Abra o arquivo e adicione a chave da OpenAI:
 OPENAI_API_KEY=sua_chave_aqui
 ```
 
-> 🔑 Aprenda como gerar uma chave de API da OpenAI [aqui](chefIA/openai-api-key.md)
+> 🔑 Aprenda como gerar uma chave de API da OpenAI [aqui](openai-api-key.md)
 
 > ⚠️ **Importante:** nunca suba o arquivo `.env` para o GitHub! Ele já está listado no `.gitignore` deste projeto, então você está protegida.
 
-> 🔑 **Como conseguir uma chave gratuita?** Você pode usar o **GitHub Models** para prototipar de graça (criar uma chave na OpenAI exige cartão de crédito), usando seu token do GitHub como chave. Veja as instruções [aqui](chefIA/github-models.md). Uma ressalva importante aqui é que esses modelos têm uma série de limitações (como só funcionarem em inglês e não saberem ler ou produzir imagens e vídeos)
+> 🔑 **Como conseguir uma chave gratuita?** Você pode usar o **GitHub Models** para prototipar de graça (criar uma chave na OpenAI exige cartão de crédito), usando seu token do GitHub como chave. Veja as instruções [aqui](github-models.md). Uma ressalva importante aqui é que esses modelos têm uma série de limitações (como só funcionarem em inglês e não saberem ler ou produzir imagens e vídeos)
 
 ### 5. Crie o banco de dados
 
