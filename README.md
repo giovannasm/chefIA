@@ -81,7 +81,7 @@ OPENAI_API_KEY=sua_chave_aqui
 ```
 
 <details>
-<summary>📋 Passo a passo: criando sua chave de API na OpenAI</summary>
+<summary>📋 Passo a passo: criando sua chave de API na OpenAI (Pago)</summary>
 
 <br>
 
