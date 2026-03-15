@@ -1,7 +1,53 @@
-<h2>Seus ingredientes</h2>
+<!-- <h2>Seus ingredientes</h2>
 
 <p><%= simple_format @suggestion.ingredients %></p>
 
 <h2>Receita sugerida</h2>
 
-<pre><%= @suggestion.recipe %></pre>
+<pre><%= @suggestion.recipe %></pre> -->
+
+<div class="container mt-5">
+
+  <div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+
+          <h5 class="card-title mb-3">
+            🧺 Seus ingredientes
+          </h5>
+
+          <div class="bg-light p-3 rounded">
+            <%= simple_format @suggestion.ingredients %>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card shadow-sm">
+        <div class="card-body">
+
+          <h4 class="card-title mb-3">
+            👩‍🍳 Receita sugerida
+          </h4>
+
+          <div style="white-space: pre-wrap;">
+            <%= @suggestion.recipe %>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <%= link_to "Tentar outra receita",
+          new_recipe_suggestion_path,
+          class: "btn btn-outline-secondary" %>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
