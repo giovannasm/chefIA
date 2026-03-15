@@ -1,0 +1,9 @@
+<h1>ChefIA, o que eu posso cozinhar?</h1>
+
+<%= simple_form_for @suggestion do |f| %>
+  <%= f.input :ingredients,
+        label: "Quais ingredientes você tem?",
+        input_html: { rows: 5 } %>
+
+  <%= f.button :submit, "Sugerir receita" %>
+<% end %>
