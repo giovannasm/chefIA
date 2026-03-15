@@ -75,6 +75,8 @@ class RecipeSuggestionsController < ApplicationController
       - Instruções passo a passo
 
       Mantenha a receita simples e amigável para iniciantes.
+
+      Formate a resposta de forma clara e organizada, usando emojis e seções.
     PROMPT
   end
 end
