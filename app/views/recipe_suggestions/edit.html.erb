@@ -1,0 +1,26 @@
+<div class="container mt-5">
+
+  <h2 class="mb-4">Editar Ingredientes</h2>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+
+      <%= simple_form_for @suggestion do |f| %>
+
+        <div class="mb-3">
+          <%= f.label :ingredients, class: "form-label" %>
+
+          <%= f.text_area :ingredients,
+            rows: 6,
+            class: "form-control" %>
+        </div>
+
+        <%= f.submit "Atualizar Receita",
+          class: "btn btn-primary" %>
+
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
