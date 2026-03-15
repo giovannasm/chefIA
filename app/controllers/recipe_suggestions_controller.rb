@@ -1,4 +1,12 @@
 class RecipeSuggestionsController < ApplicationController
+  def index
+    @suggestions = RecipeSuggestion.order(created_at: :desc)
+  end
+
+  def show
+    @suggestion = RecipeSuggestion.find(params[:id])
+  end
+
   def new
     @suggestion = RecipeSuggestion.new
   end
@@ -19,8 +27,27 @@ class RecipeSuggestionsController < ApplicationController
     end
   end
 
-  def show
+  def edit
     @suggestion = RecipeSuggestion.find(params[:id])
+  end
+
+  def update
+    @suggestion = RecipeSuggestion.find(params[:id])
+    @suggestion.assign_attributes(suggestion_params)
+    @suggestion.recipe = generate_recipe(@suggestion.ingredients)
+
+    if @suggestion.save
+      redirect_to @suggestion
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @suggestion = RecipeSuggestion.find(params[:id])
+    @suggestion.destroy
+
+    redirect_to recipe_suggestions_path
   end
 
   private
@@ -31,7 +58,7 @@ class RecipeSuggestionsController < ApplicationController
 
   def build_prompt(ingredients)
     <<~PROMPT
-      Sugira duas receitas simples com base nos seguintes ingredientes:
+      Você é um chef de cozinha experiente e criativo. Sugira duas receitas simples com base nos seguintes ingredientes:
 
       #{ingredients}
 
