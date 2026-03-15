@@ -13,11 +13,8 @@ class RecipeSuggestionsController < ApplicationController
 
   def create
     @suggestion = RecipeSuggestion.new(suggestion_params)
-
     prompt = build_prompt(@suggestion.ingredients)
-
     response = RubyLLM.chat.ask(prompt)
-
     @suggestion.recipe = response.content
 
     if @suggestion.save
@@ -34,7 +31,9 @@ class RecipeSuggestionsController < ApplicationController
   def update
     @suggestion = RecipeSuggestion.find(params[:id])
     @suggestion.assign_attributes(suggestion_params)
-    @suggestion.recipe = generate_recipe(@suggestion.ingredients)
+    prompt = build_prompt(@suggestion.ingredients)
+    response = RubyLLM.chat.ask(prompt)
+    @suggestion.recipe = response.content
 
     if @suggestion.save
       redirect_to @suggestion
