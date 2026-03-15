@@ -74,11 +74,10 @@ O app precisa de uma chave de API para se comunicar com a IA. Crie um arquivo ch
 touch .env
 ```
 
-Abra o arquivo e adicione a chave da OpenAI:
+Dependendo de qual opção de chave você escolher abaixo, abra o arquivo e adicione a linha correspondente:
 
-```
-OPENAI_API_KEY=sua_chave_aqui
-```
+- Se usar a **OpenAI** (paga): `OPENAI_API_KEY=sua_chave_aqui`
+- Se usar o **GitHub Models** (gratuito): `GITHUB_TOKEN=seu_token_aqui`
 
 <details>
 <summary>📋 Passo a passo: criando sua chave de API na OpenAI (Pago)</summary>
