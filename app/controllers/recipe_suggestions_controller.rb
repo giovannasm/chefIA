@@ -1,8 +1,4 @@
 class RecipeSuggestionsController < ApplicationController
-  def index
-    @suggestions = RecipeSuggestion.order(created_at: :desc)
-  end
-
   def show
     @suggestion = RecipeSuggestion.find(params[:id])
   end
@@ -22,6 +18,12 @@ class RecipeSuggestionsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  # conteúdo extra abaixo
+
+  def index
+    @suggestions = RecipeSuggestion.order(created_at: :desc)
   end
 
   def edit
