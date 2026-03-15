@@ -1,4 +1,4 @@
-class RecipeSuggestionController < ApplicationController
+class RecipeSuggestionsController < ApplicationController
   def new
     @suggestion = RecipeSuggestion.new
   end
@@ -31,16 +31,22 @@ class RecipeSuggestionController < ApplicationController
 
   def build_prompt(ingredients)
     <<~PROMPT
-      Suggest a simple recipe using only the following ingredients:
+      Sugira duas receitas simples com base nos seguintes ingredientes:
 
       #{ingredients}
 
-      Return:
-      - Recipe name
-      - Ingredients list
-      - Step-by-step instructions
+      Receita 1:
+      - Deve usar apenas os ingredientes listados acima.
 
-      Keep it simple and beginner friendly.
+      Receita 2:
+      - Pode incluir alguns ingredientes adicionais que o usuário talvez precise comprar.
+
+      Para cada receita, retorne:
+      - Nome da receita
+      - Lista de ingredientes
+      - Instruções passo a passo
+
+      Mantenha a receita simples e amigável para iniciantes.
     PROMPT
   end
 end
