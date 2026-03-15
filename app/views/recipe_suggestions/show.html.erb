@@ -6,7 +6,7 @@
 
 <pre><%= @suggestion.recipe %></pre> -->
 
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
 
   <div class="row justify-content-center">
 
@@ -43,6 +43,12 @@
       <div class="text-center mt-4">
         <%= link_to "Tentar outra receita",
           new_recipe_suggestion_path,
+          class: "btn btn-outline-secondary" %>
+      </div>
+
+      <div class="text-center mt-4">
+        <%= link_to "Ver todas as receitas",
+          recipe_suggestions_path,
           class: "btn btn-outline-secondary" %>
       </div>
 
