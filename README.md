@@ -80,11 +80,124 @@ Abra o arquivo e adicione a chave da OpenAI:
 OPENAI_API_KEY=sua_chave_aqui
 ```
 
-> 🔑 Aprenda como gerar uma chave de API da OpenAI [aqui](openai-api-key.md)
+<details>
+<summary>📋 Passo a passo: criando sua chave de API na OpenAI</summary>
+
+<br>
+
+**1. Crie uma conta na OpenAI**
+
+Acesse [platform.openai.com](https://platform.openai.com) e crie uma conta (ou faça login se já tiver uma).
+
+**2. Adicione créditos**
+
+A API da OpenAI é paga por uso. Você precisa adicionar um cartão de crédito e comprar créditos antes de conseguir criar uma chave.
+
+Vá em **Settings > Billing** e adicione um método de pagamento. Para testes, um valor pequeno (como US$ 5) já é suficiente para muitas requisições.
+
+**3. Crie sua chave de API**
+
+Vá para [platform.openai.com/api-keys](https://platform.openai.com/api-keys) e clique em **Create new secret key**.
+
+Dê um nome à chave (ex: `ChefIA`) e clique em **Create secret key**. A chave vai aparecer na tela — **copie agora**, pois ela não será exibida novamente!
+
+**4. Use a chave no projeto**
+
+No seu arquivo `.env`, adicione:
+
+```
+OPENAI_API_KEY=cole-sua-chave-aqui
+```
+
+O arquivo `config/initializers/ruby_llm.rb` já está configurado para usar essa variável por padrão:
+
+```ruby
+RubyLLM.configure do |config|
+  config.openai_api_key = ENV["OPENAI_API_KEY"]
+end
+```
+
+**5. Teste no console do Rails**
+
+```bash
+rails console
+```
+
+```ruby
+chat = RubyLLM.chat
+response = chat.ask("O que é Ruby on Rails?")
+puts response.content
+```
+
+Se uma resposta aparecer, está funcionando! 🎉
+
+> ⚠️ Fique de olho no seu consumo em **Settings > Usage** na plataforma da OpenAI para não ter surpresas na fatura. Você também pode criar limites de gasto ou bloquear a compra automática de créditos em seu cartão de crédito (desabilite o auto recharge).
+
+</details>
 
 > ⚠️ **Importante:** nunca suba o arquivo `.env` para o GitHub! Ele já está listado no `.gitignore` deste projeto, então você está protegida.
 
-> 🔑 **Como conseguir uma chave gratuita?** Você pode usar o **GitHub Models** para prototipar de graça (criar uma chave na OpenAI exige cartão de crédito), usando seu token do GitHub como chave. Veja as instruções [aqui](github-models.md). Uma ressalva importante aqui é que esses modelos têm uma série de limitações (como só funcionarem em inglês e não saberem ler ou produzir imagens e vídeos)
+> 🔑 **Como conseguir uma chave gratuita?** Você pode usar o **GitHub Models** para prototipar de graça (criar uma chave na OpenAI exige cartão de crédito), usando seu token do GitHub como chave. Uma ressalva importante aqui é que esses modelos têm uma série de limitações (como só funcionarem em inglês e não saberem ler ou produzir imagens e vídeos)
+
+<details>
+<summary>📋 Passo a passo: criando sua chave gratuita com GitHub Models</summary>
+
+<br>
+
+Criar uma chave na OpenAI exige cartão de crédito. Como alternativa gratuita, o GitHub disponibiliza acesso aos mesmos modelos de IA (incluindo os da OpenAI) autenticado com um token do próprio GitHub.
+
+**1. Acesse a página de tokens do GitHub**
+
+Vá para [github.com/settings/tokens](https://github.com/settings/tokens), clique em **Personal access tokens > Fine-grained tokens** e depois em **Generate new token**.
+
+**2. Dê um nome ao seu token**
+
+Escolha um nome que você vai reconhecer facilmente (ex: `ChefIA Workshop`). Adicione uma descrição se quiser.
+
+**3. Defina as permissões**
+
+- Em **Repository access**, não precisa selecionar nenhum repositório — deixe como está.
+- Em **Account permissions**, encontre **Models** e selecione **Read-only**.
+- Deixe todas as outras permissões como **No access**.
+
+**4. Gere o token**
+
+Role até o final da página e clique em **Generate token**. Uma sequência de caracteres vai aparecer na tela — **copie agora**, pois ela não será exibida novamente!
+
+**5. Use o token no projeto**
+
+No seu arquivo `.env`, adicione:
+
+```
+GITHUB_TOKEN=cole-seu-token-aqui
+```
+
+E no arquivo `config/initializers/ruby_llm.rb`, configure assim como está aqui nesse projeto:
+
+```ruby
+RubyLLM.configure do |config|
+  config.openai_api_key = ENV["GITHUB_TOKEN"]
+  config.openai_api_base = "https://models.inference.ai.azure.com"
+end
+```
+
+**6. Teste no console do Rails**
+
+```bash
+rails console
+```
+
+```ruby
+chat = RubyLLM.chat
+response = chat.ask("What is Ruby on Rails?")
+puts response.content
+```
+
+Se uma resposta aparecer, está funcionando! 🎉
+
+> ⚠️ O GitHub Models tem limites de uso gratuitos (rate limits). Para uso em produção ou volume maior, será necessário uma conta paga na OpenAI ou outro provedor.
+
+</details>
 
 ### 5. Crie o banco de dados
 
