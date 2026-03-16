@@ -8,11 +8,11 @@ Você digita o que tem na geladeira, a IA pensa como uma chef experiente, e voil
 
 ---
 
-## 📎 Links da apresentação
+## 📎 Material da apresentação
 
 | Material | Link |
 |----------|------|
-| 🖥️ Slides do workshop | *(em breve)* |
+| 🖥️ Slides do workshop | [link](slides.pdf) |
 
 ---
 
