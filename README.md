@@ -13,6 +13,7 @@ Você digita o que tem na geladeira, a IA pensa como uma chef experiente, e voil
 | Material | Link |
 |----------|------|
 | 🖥️ Slides do workshop | [link](slides.pdf) |
+| 🎥 Vídeo do workshop | [link](https://www.youtube.com/watch?v=C1RuiKhXBtg) |
 
 ---
 
