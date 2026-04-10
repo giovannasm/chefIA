@@ -286,6 +286,4 @@ Se você está estudando por conta própria e travou em algum passo, o melhor lu
 
 *Feito com 👩‍🍳 e muito `rails generate` durante o workshop de Rails + IA de Rails Girls 🤝 Le Wagon*
 
-O código-fonte deste projeto está licenciado sob a [MIT License](LICENSE).
-
-O conteúdo educacional (arquivos `.md`, tutoriais, imagens) está licenciado sob [CC](LICENSE-CONTENT).
+Este projeto está licenciado sob a [MIT License](LICENSE).
