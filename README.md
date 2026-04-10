@@ -285,3 +285,5 @@ Se você está estudando por conta própria e travou em algum passo, o melhor lu
 ---
 
 *Feito com 👩‍🍳 e muito `rails generate` durante o workshop de Rails + IA de Rails Girls 🤝 Le Wagon*
+
+Este projeto está sob a licença MIT
