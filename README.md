@@ -288,4 +288,4 @@ Se você está estudando por conta própria e travou em algum passo, o melhor lu
 
 O código-fonte deste projeto está licenciado sob a [MIT License](LICENSE).
 
-O conteúdo educacional (arquivos `.md`, tutoriais, imagens) está licenciado sob [CC BY 4.0](LICENSE-CONTENT).
+O conteúdo educacional (arquivos `.md`, tutoriais, imagens) está licenciado sob [CC](LICENSE-CONTENT).
